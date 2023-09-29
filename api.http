@@ -1,0 +1,35 @@
+@url = http://localhost:3000/api/v1
+
+### Get All Tasks with pagination
+GET {{url}}/task?pageSize=5&currentPage=1 HTTP/1.1
+content-type: application/json
+
+### Get Task by Id
+GET {{url}}/task/1 HTTP/1.1
+content-type: application/json
+
+### Create Task
+POST {{url}}/task HTTP/1.1
+content-type: application/json
+
+{
+    "task": "Create Example APIs",
+    "status":"OPEN"
+}
+
+### Update Task by Id
+PUT {{url}}/task/1 HTTP/1.1
+content-type: application/json
+
+{
+    "task": "This is updated Task",
+    "status": "COMPLETED"
+}
+
+### Delete Task by Id
+DELETE  {{url}}/task/1 HTTP/1.1
+content-type: application/json
+
+### Get Task Report which will return the task count for each month
+GET {{url}}/task/report?startMonth=2023-07&endMonth=2023-09 HTTP/1.1
+content-type: application/json
